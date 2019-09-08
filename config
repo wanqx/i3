@@ -188,8 +188,9 @@ bindsym $mod+r mode "resize"
 # bar {
         #status_command i3status
 #}
-for_window [instance=”TIM.exe”] floating enable
-for_window [instance=”TIM.exe”] border none
+
+for_window [instance="TIM.exe"] floating enable
+for_window [instance="TIM.exe"] border none
 
 gaps inner 8
 gaps outer 4
