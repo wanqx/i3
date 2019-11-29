@@ -191,6 +191,7 @@ bindsym $mod+r mode "resize"
         #status_command i3status
 #}
 
+for_window [title="^Figure "] floating enable
 
 gaps inner 4
 gaps outer 2
@@ -199,10 +200,11 @@ gaps outer 2
 new_window pixel 0
 
 # autoExec
-exec --no-startup-id mpd
+exec --no-startup-id compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id fcitx
-exec --no-startup-id compton -b
+exec --no-startup-id dunst
+exec --no-startup-id mpd
 exec --no-startup-id xss-lock -- $HOME/.config/i3/lock.sh
 # exec --no-startup-id albert
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
