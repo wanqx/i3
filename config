@@ -28,8 +28,7 @@ title_align center
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
-# font xft: SF Pro Display 14
+font pango: SF Pro Rounded 12
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -89,8 +88,9 @@ exec --no-startup-id xss-lock -- $HOME/.config/i3/lock.sh
 # Rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun -config ~/.config/rofi/themes/default.rasi
 bindsym $mod+Tab exec --no-startup-id rofi  -show window -config ~/.config/rofi/themes/Switch.rasi
-bindsym $mod+y exec --no-startup-id $HOME/.config/rofi/scripts/Powermenu.sh
-bindsym $mod+shift+m exec --no-startup-id $HOME/.config/rofi/scripts/mpdcontrol.sh
+# bindsym $mod+y exec --no-startup-id $HOME/.config/rofi/scripts/Powermenu.sh
+bindsym $sup+u exec --no-startup-id $HOME/.config/polybar/scripts/powermenu
+bindsym $mod+Shift+m exec --no-startup-id $HOME/.config/rofi/scripts/mpdcontrol.sh
 # rofi-calc - useful calc tool
 # bindsym $mod+c exec --no-startup-id "rofi -show calc -modi calc -no-show-match -no-sort"
 
@@ -105,12 +105,12 @@ bindsym $mod+shift+m exec --no-startup-id $HOME/.config/rofi/scripts/mpdcontrol.
 bindsym $mod+Return exec --no-startup-id alacritty
 
 
-# bindsym $mod+c exec --no-startup-id google-chrome-stable
+bindsym $mod+c exec --no-startup-id google-chrome-stable
 # bindsym $mod+m exec --no-startup-id netease-cloud-music
 # bindsym $mod+p exec --no-startup-id virtualbox
 # bindsym Print exec --no-startup-id scrot $HOME/Pictures/ScreenShots/`date +%Y-%m-%d_%H-%M-%S`.jpg
 bindsym Print exec --no-startup-id flameshot gui
-bindsym $mod+F10 exec --no-startup-id $HOME/.config/i3/lock.sh
+bindsym $sup+l exec --no-startup-id $HOME/.config/i3/lock.sh
 bindsym $mod+F12 exec --no-startup-id systemctl hibernate
 # Start applications
 #
@@ -138,32 +138,23 @@ exec_always --no-startup-id feh --bg-center $HOME/Pictures/background.png
 for_window [class=".*anbox.*"] floating enable
 for_window [class="electronic-wechat"] floating enable
 for_window [class="(?!)System-config-printer.py"] floating enable border normal
-for_window [class="xpad"] floating enable border pixel 0
-for_window [class="(?!)xfce4-appfinder"] floating enable border normal
 for_window [class="Calamares"] floating enable border normal
-for_window [title="File Transfer*"] floating enable
-for_window [title="MuseScore: Play Panel"] floating enable
-for_window [class="Oblogout"] fullscreen enable
-for_window [class="octopi"] floating enable
-for_window [title="About Pale Moon"] floating enable
-for_window [class="Simple-scan"] floating enable border normal
-for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="Kalc"] floating enable border 0, move position center
 for_window [title="(?!)GIMP Startup"] border 0, move position center
-for_window [title="Open With"] floating enable resize set 800 600,  move position center
 for_window [title="Viewnior"] floating enable resize set 1600x900,  move position center
-for_window [class="Gpick"] floating enable
 
 ## System settings apps
-for_window [class="Lxappearance"] floating enable resize set 800 600 move position center 
-for_window [class="Nitrogen"] floating enable resize set 800 600 move position center
 for_window [class="qt5ct"] floating enable  resize set 800 600 move position center
-for_window [class="Pavucontrol"] floating enable resize set 800 600
 for_window [class="Nm-connection-editor"] floating enable resize set 800 600
 for_window [class="Kvantum Manager"] floating enable resize set 800 600
 for_window [class="GParted"] floating enable resize set 800 600
 
+for_window [title="Okular"] floating enable resize set 1280 1000
+for_window [title="^Figure "] floating enable resize set 800 600
+for_window [title="文件管理器"] floating enable resize set 1180 800
+for_window [title="^Oracle VM"] floating enable resize set 800 600
+for_window [title="^TeamViewer"] floating enable resize set 1080 800
 
 ##########################
 #
@@ -183,7 +174,7 @@ new_float pixel 0
 # change borders
 bindsym $mod+u border none
 bindsym $mod+n border normal 0
-bindsym $mod+shift+n border normal 1
+bindsym $mod+Shift+n border normal 1
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -217,7 +208,7 @@ bindsym $mod+Shift+Right move right
 
 
 # workspace back and forth (with/without active container)
-workspace_auto_back_and_forth yes
+workspace_auto_back_and_forth no
 bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
@@ -251,6 +242,12 @@ bindsym $mod+a focus parent
 
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+# Show the sup-mail scratchpad window, if any.
+bindsym mod4+c [title="Google Chrome"] scratchpad show
+bindsym mod4+m [title="Music"] scratchpad show
 
 #navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
@@ -258,7 +255,7 @@ bindsym $mod+Ctrl+Left workspace prev
 
 # hide/unhide i3status bar
 #bindsym $mod+m bar mode toggle
-bindsym $mod+m exec polybar-msg cmd toggle
+# bindsym $mod+m exec polybar-msg cmd toggle
 
 
 # Define names for default workspaces for which we configure key bindings later on.
@@ -298,9 +295,6 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 # bindsym $mod+Shift+9 move container to workspace $ws9
 # bindsym $mod+Shift+0 move container to workspace $ws10
 
-
-for_window [title="^Figure "] floating enable
-for_window [title="xuwanqian - 文件管理器"] floating enable
 
 
 # reload the configuration file
@@ -450,5 +444,4 @@ mode "$mode_gaps_inner" {
 # client.urgent           #990000 #990000 #FFFFFF #990000
 # client.placeholder      #000000 #000000 #FFFFFF #000000
 # client.background       #FFFFFF
-
 
