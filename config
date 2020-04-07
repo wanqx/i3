@@ -117,11 +117,14 @@ bindsym $mod+F12 exec --no-startup-id systemctl hibernate
 
 # Start applications on specific workspaces
 # assign [class="code"] $ws1
-# assign [class="Emacs"] $ws1
 # assign [class="irefox"] $ws2
-# assign [class="Termite"] $ws3
-# assign [class="Nemo"] $ws4
-# assign [class="Gimp"] $ws6
+assign [class="chrome"] $ws3
+assign [class="baidunetdisk"] $ws4
+assign [class="electronic-wechat"] $ws4
+assign [title="netease-cloud-music"] $ws4
+assign [title="Mozilla Thunderbird"] $ws4
+assign [class="TeamViewer"] $ws5
+assign [class="VirtualBox"] $ws6
 # assign [class="Inkscape"] $ws6
 # Autostart applications
 exec --no-startup-id compton
@@ -141,20 +144,21 @@ for_window [class="(?!)System-config-printer.py"] floating enable border normal
 for_window [class="Calamares"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="Kalc"] floating enable border 0, move position center
+for_window [class="baidunetdisk"] floating enable resize set 800 600
 for_window [title="(?!)GIMP Startup"] border 0, move position center
-for_window [title="Viewnior"] floating enable resize set 1600x900,  move position center
+for_window [title="Viewnior"] floating enable resize set 1600x900, move position center
+for_window [title="^Oracle VM"] floating enable resize set 800 600
+for_window [title="^TeamViewer"] floating enable resize set 1080 800
+for_window [title="Mozilla Thunderbird"] floating enable resize set 1280 960
 
 ## System settings apps
 for_window [class="qt5ct"] floating enable  resize set 800 600 move position center
 for_window [class="Nm-connection-editor"] floating enable resize set 800 600
 for_window [class="Kvantum Manager"] floating enable resize set 800 600
 for_window [class="GParted"] floating enable resize set 800 600
-
-for_window [title="Okular"] floating enable resize set 1280 1000
+for_window [title="Okular"] floating enable resize set 1280 1000, move position center
 for_window [title="^Figure "] floating enable resize set 800 600
 for_window [title="文件管理器"] floating enable resize set 1180 800
-for_window [title="^Oracle VM"] floating enable resize set 800 600
-for_window [title="^TeamViewer"] floating enable resize set 1080 800
 
 ##########################
 #
@@ -246,8 +250,10 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Show the sup-mail scratchpad window, if any.
-bindsym mod4+c [title="Google Chrome"] scratchpad show
-bindsym mod4+m [title="Music"] scratchpad show
+bindsym $sup+c [title="Google Chrome"] scratchpad show
+bindsym $sup+m [title="netease-cloud-music"] scratchpad show
+bindsym $sup+w [class="electronic-wechat"] scratchpad show
+bindsym $sup+e [title="Mozilla Thunderbird"] scratchpad show
 
 #navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
