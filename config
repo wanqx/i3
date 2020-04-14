@@ -28,7 +28,7 @@ title_align center
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango: SF Pro Rounded 12
+font pango: SF Pro Rounded 14
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -118,12 +118,13 @@ bindsym $sup+l exec --no-startup-id $HOME/.config/i3/lock.sh
 # Start applications on specific workspaces
 # assign [class="code"] $ws1
 # assign [class="irefox"] $ws2
-assign [class="chrome"] $ws3
-assign [title="Typora$"] $ws4
+assign [class="Google-chrome"] $ws3
+assign [class="Typora"] $ws4
+assign [class="motrix"] $ws4
 assign [class="baidunetdisk"] $ws4
 assign [class="electronic-wechat"] $ws4
 assign [title="netease-cloud-music"] $ws4
-assign [title="Evolution$"] $ws4
+assign [class="Evolution"] $ws4
 assign [class="TeamViewer"] $ws5
 assign [class="VirtualBox"] $ws6
 # assign [class="Inkscape"] $ws6
@@ -133,6 +134,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id fcitx
 exec --no-startup-id dunst
 exec --no-startup-id mpd
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 # exec --no-startup-id albert
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-center $HOME/Pictures/background.png
@@ -144,14 +146,15 @@ for_window [class="electronic-wechat"] floating enable
 for_window [class="(?!)System-config-printer.py"] floating enable border normal
 for_window [class="Calamares"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
+for_window [class="motrix"] floating enable resize set 800 600
+for_window [class="Typora"] floating enable resize set 1080 960
+for_window [class="Evolution"] floating enable resize set 1280 960
+for_window [class="File-roller"] floating enable resize set 600 600
+for_window [class="TeamViewer"] floating enable resize set 1080 800
 for_window [class="baidunetdisk"] floating enable resize set 800 600
-for_window [title="^Terminal"] floating enable resize set 800 500
+for_window [class="Xfce4-terminal"] floating enable resize set 800 500
 for_window [title="(?!)GIMP Startup"] border 0, move position center
-for_window [title="Viewnior"] floating enable resize set 1600x900, move position center
 for_window [title="^Oracle VM"] floating enable resize set 800 600
-for_window [title="^TeamViewer"] floating enable resize set 1080 800
-for_window [title="Evolution$"] floating enable resize set 1280 960
-for_window [title="Typora$"] floating enable resize set 1280 960
 
 ## System settings apps
 for_window [class="Nm-connection-editor"] floating enable resize set 800 600
@@ -159,7 +162,7 @@ for_window [class="GParted"] floating enable resize set 800 600
 for_window [class="Evince"] floating enable resize set 1280 1000, move position center
 for_window [class="Nautilus"] floating enable resize set 1180 800
 for_window [class="Gnome-terminal"] floating enable resize set 1180 800
-for_window [title="^Figure "] floating enable resize set 800 600
+for_window [class="Matplotlib"] floating enable resize set 800 600
 
 ##########################
 #
