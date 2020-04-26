@@ -105,7 +105,7 @@ bindsym $mod+Shift+m exec --no-startup-id $HOME/.config/rofi/scripts/mpdcontrol.
 bindsym $mod+Return exec --no-startup-id alacritty
 
 
-bindsym $mod+c exec --no-startup-id google-chrome-stable
+bindsym $mod+c exec --no-startup-id chromium
 # bindsym $mod+m exec --no-startup-id netease-cloud-music
 # bindsym $mod+p exec --no-startup-id virtualbox
 # bindsym Print exec --no-startup-id scrot $HOME/Pictures/ScreenShots/`date +%Y-%m-%d_%H-%M-%S`.jpg
@@ -118,8 +118,8 @@ bindsym $sup+l exec --no-startup-id $HOME/.config/i3/lock.sh
 # Start applications on specific workspaces
 # assign [class="code"] $ws1
 # assign [class="irefox"] $ws2
-assign [class="Google-chrome"] $ws3
-assign [class="Typora"] $ws4
+assign [class="Chromium"] $ws3
+# assign [class="Typora"] $ws4
 assign [class="motrix"] $ws4
 assign [class="baidunetdisk"] $ws4
 assign [class="electronic-wechat"] $ws4
@@ -256,7 +256,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Show the sup-mail scratchpad window, if any.
-bindsym $sup+c [title="Google Chrome"] scratchpad show
+bindsym $sup+c [class="Chromium"] scratchpad show
 bindsym $sup+m [title="netease-cloud-music"] scratchpad show
 bindsym $sup+w [class="electronic-wechat"] scratchpad show
 bindsym $sup+e [title="Mozilla Thunderbird"] scratchpad show
@@ -314,7 +314,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'killall polybar&&killall xss-lock&&i3-msg exit'"
 
 bindsym $mod+r mode "resize"
 # resize window (you can also use the mouse for that)
