@@ -59,10 +59,11 @@ bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+
 bindsym XF86AudioLowerVolume exec amixer sset Master 5%-
 bindsym XF86AudioMute exec amixer sset Master toggle
 # Sreen brightness controls
-bindsym $mod+XF86MonBrightnessUp exec xbacklight -inc 1
-bindsym $mod+XF86MonBrightnessDown exec xbacklight -dec 1
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+# # Now become ACPI Events
+# bindsym $mod+XF86MonBrightnessUp exec xbacklight -inc 1
+# bindsym $mod+XF86MonBrightnessDown exec xbacklight -dec 1
+# bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+# bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 
 # Fullscreen screenshot
@@ -147,6 +148,7 @@ for_window [class="(?!)System-config-printer.py"] floating enable border normal
 for_window [class="Calamares"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="motrix"] floating enable resize set 800 600
+for_window [class="Seafile"] floating enable resize set 800 600
 for_window [class="Typora"] floating enable resize set 1080 960
 for_window [class="Evolution"] floating enable resize set 1280 960
 for_window [class="File-roller"] floating enable resize set 600 600
