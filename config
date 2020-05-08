@@ -121,6 +121,7 @@ bindsym $sup+l exec --no-startup-id $HOME/.config/i3/lock.sh
 # assign [class="irefox"] $ws2
 assign [class="Chromium"] $ws3
 # assign [class="Typora"] $ws4
+assign [class="zoom"] $ws4
 assign [class="motrix"] $ws4
 assign [class="baidunetdisk"] $ws4
 assign [class="electronic-wechat"] $ws4
@@ -138,10 +139,11 @@ exec --no-startup-id mpd
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 # exec --no-startup-id albert
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-center $HOME/Pictures/background.png
+exec_always --no-startup-id $HOME/Pictures/bg/changebg
 
 
 # Specific applications configration
+for_window [class="zoom"] floating enable
 for_window [class=".*anbox.*"] floating enable
 for_window [class="electronic-wechat"] floating enable
 for_window [class="(?!)System-config-printer.py"] floating enable border normal
