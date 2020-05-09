@@ -131,7 +131,7 @@ assign [class="TeamViewer"] $ws5
 assign [class="VirtualBox"] $ws6
 # assign [class="Inkscape"] $ws6
 # Autostart applications
-exec --no-startup-id compton
+exec --no-startup-id compton -b --logpath /tmp/compton
 exec --no-startup-id nm-applet
 exec --no-startup-id fcitx
 exec --no-startup-id dunst
@@ -318,7 +318,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'killall polybar&&killall xss-lock&&i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'killall polybar;killall xss-lock;i3-msg exit'"
 
 bindsym $mod+r mode "resize"
 # resize window (you can also use the mouse for that)
