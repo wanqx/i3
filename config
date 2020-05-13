@@ -131,15 +131,15 @@ assign [class="TeamViewer"] $ws5
 assign [class="VirtualBox"] $ws6
 # assign [class="Inkscape"] $ws6
 # Autostart applications
-exec --no-startup-id compton -b --logpath /tmp/compton
 exec --no-startup-id nm-applet
-exec --no-startup-id fcitx
-exec --no-startup-id dunst
 exec --no-startup-id mpd
+exec --no-startup-id dunst
+exec --no-startup-id fcitx
+exec --no-startup-id compton -b --logpath /tmp/compton
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 # exec --no-startup-id albert
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/Pictures/bg/changebg
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 
 # Specific applications configration
@@ -149,6 +149,7 @@ for_window [class="electronic-wechat"] floating enable
 for_window [class="(?!)System-config-printer.py"] floating enable border normal
 for_window [class="Calamares"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
+for_window [class="Gedit"] floating enable resize set 1024 700
 for_window [class="motrix"] floating enable resize set 800 600
 for_window [class="Seafile"] floating enable resize set 800 600
 for_window [class="Typora"] floating enable resize set 1080 960
@@ -156,8 +157,8 @@ for_window [class="Evolution"] floating enable resize set 1280 960
 for_window [class="File-roller"] floating enable resize set 600 600
 for_window [class="TeamViewer"] floating enable resize set 1080 800
 for_window [class="baidunetdisk"] floating enable resize set 800 600
-for_window [class="Xfce4-terminal"] floating enable resize set 800 500
-for_window [title="^Oracle VM"] floating enable resize set 800 600
+for_window [class="Xfce4-terminal"] floating enable resize set 1024 700
+for_window [class="VirtualBox Manager"] floating enable resize set 800 600
 for_window [title="(?!)GIMP Startup"] border 0, move position center
 
 ## System settings apps
@@ -167,6 +168,7 @@ for_window [class="Nautilus"] floating enable resize set 1180 800
 for_window [class=".atplotlib"] floating enable resize set 800 600
 for_window [class="Gnome-terminal"] floating enable resize set 1180 800
 for_window [class="Nm-connection-editor"] floating enable resize set 800 600
+for_window [class="mpv"] floating enable resize set 1024 768, move position center
 for_window [class="Evince"] floating enable resize set 1280 1000, move position center
 
 
@@ -252,7 +254,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+z focus child
 
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
