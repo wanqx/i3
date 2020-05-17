@@ -157,7 +157,7 @@ for_window [class="Evolution"] floating enable resize set 1280 960
 for_window [class="File-roller"] floating enable resize set 600 600
 for_window [class="TeamViewer"] floating enable resize set 1080 800
 for_window [class="baidunetdisk"] floating enable resize set 800 600
-for_window [class="Xfce4-terminal"] floating enable resize set 1024 700
+for_window [class="Xfce4-terminal"] floating enable resize set 1080 810
 for_window [class="VirtualBox Manager"] floating enable resize set 800 600
 for_window [title="(?!)GIMP Startup"] border 0, move position center
 
