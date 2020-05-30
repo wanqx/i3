@@ -88,7 +88,7 @@ exec --no-startup-id xss-lock -- $HOME/.config/i3/lock.sh
 
 # Rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun -config ~/.config/rofi/themes/default.rasi
-bindsym $mod+Tab exec --no-startup-id rofi  -show window -config ~/.config/rofi/themes/Switch.rasi
+bindsym $mod+Tab exec --no-startup-id rofi -show window -config ~/.config/rofi/themes/Switch.rasi
 # bindsym $mod+y exec --no-startup-id $HOME/.config/rofi/scripts/Powermenu.sh
 bindsym $sup+u exec --no-startup-id $HOME/.config/polybar/scripts/powermenu
 bindsym $mod+Shift+m exec --no-startup-id $HOME/.config/rofi/scripts/mpdcontrol.sh
@@ -130,6 +130,7 @@ assign [class="Evolution"] $ws4
 assign [class="TeamViewer"] $ws5
 assign [class="VirtualBox"] $ws6
 # assign [class="Inkscape"] $ws6
+assign [class="jetbrains-idea"] $ws7
 # Autostart applications
 exec --no-startup-id nm-applet
 exec --no-startup-id mpd
@@ -146,30 +147,30 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 for_window [class="zoom"] floating enable
 for_window [class=".*anbox.*"] floating enable
 for_window [class="electronic-wechat"] floating enable
-for_window [class="(?!)System-config-printer.py"] floating enable border normal
-for_window [class="Calamares"] floating enable border normal
-for_window [class="Timeset-gui"] floating enable border normal
-for_window [class="Gedit"] floating enable resize set 1024 700
-for_window [class="motrix"] floating enable resize set 800 600
-for_window [class="Seafile"] floating enable resize set 800 600
-for_window [class="Typora"] floating enable resize set 1080 960
-for_window [class="Evolution"] floating enable resize set 1280 960
-for_window [class="File-roller"] floating enable resize set 600 600
-for_window [class="TeamViewer"] floating enable resize set 1080 800
-for_window [class="baidunetdisk"] floating enable resize set 800 600
-for_window [class="Xfce4-terminal"] floating enable resize set 1080 810
-for_window [class="VirtualBox Manager"] floating enable resize set 800 600
+for_window [class="(?!)System-config-printer.py"] floating enable, border normal
+for_window [class="Calamares"] floating enable, border normal
+for_window [class="Timeset-gui"] floating enable, border normal
+for_window [class="Gedit"] floating enable, resize set 1024 700
+for_window [class="motrix"] floating enable, resize set 800 600
+for_window [class="Seafile"] floating enable, resize set 800 600
+for_window [class="Typora"] floating enable, resize set 1080 900
+for_window [class="Evolution"] floating enable, resize set 1280 960
+for_window [class="File-roller"] floating enable, resize set 600 600
+for_window [class="TeamViewer"] floating enable, resize set 1080 800
+for_window [class="baidunetdisk"] floating enable, resize set 800 600
+for_window [class="VirtualBox Manager"] floating enable, resize set 800 600
+for_window [class="Xfce4-terminal"] floating enable, resize set 1080 810, sticky toggle
 for_window [title="(?!)GIMP Startup"] border 0, move position center
 
 ## System settings apps
 for_window [class="feh"] floating enable
-for_window [class="GParted"] floating enable resize set 800 600
-for_window [class="Nautilus"] floating enable resize set 1180 800
-for_window [class=".atplotlib"] floating enable resize set 800 600
-for_window [class="Gnome-terminal"] floating enable resize set 1180 800
-for_window [class="Nm-connection-editor"] floating enable resize set 800 600
-for_window [class="mpv"] floating enable resize set 1024 768, move position center
-for_window [class="Evince"] floating enable resize set 1280 1000, move position center
+for_window [class="GParted"] floating enable, resize set 800 600
+for_window [class="Nautilus"] floating enable, resize set 1180 800
+for_window [class=".atplotlib"] floating enable, resize set 800 600
+for_window [class="Gnome-terminal"] floating enable, resize set 1180 800
+for_window [class="Nm-connection-editor"] floating enable, resize set 800 600
+for_window [class="mpv"] floating enable, resize set 1024 768, move position center
+for_window [class="Evince"] floating enable, resize set 1280 1000, move position center
 
 
 ##########################
