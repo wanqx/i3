@@ -106,7 +106,7 @@ bindsym $mod+Shift+m exec --no-startup-id $HOME/.config/rofi/scripts/mpdcontrol.
 bindsym $mod+Return exec --no-startup-id alacritty
 
 
-bindsym $mod+c exec --no-startup-id chromium
+bindsym $mod+c exec --no-startup-id google-chrome-stable
 # bindsym $mod+m exec --no-startup-id netease-cloud-music
 # bindsym $mod+p exec --no-startup-id virtualbox
 # bindsym Print exec --no-startup-id scrot $HOME/Pictures/ScreenShots/`date +%Y-%m-%d_%H-%M-%S`.jpg
@@ -119,7 +119,7 @@ bindsym $sup+l exec --no-startup-id "sleep 0.2;xset dpms force off"
 # Start applications on specific workspaces
 # assign [class="code"] $ws1
 # assign [class="irefox"] $ws2
-assign [class="Chromium"] $ws3
+assign [class="Google-chrome"] $ws3
 # assign [class="Typora"] $ws4
 assign [class="zoom"] $ws4
 assign [class="motrix"] $ws4
@@ -129,6 +129,7 @@ assign [title="netease-cloud-music"] $ws4
 assign [class="Evolution"] $ws4
 assign [class="TeamViewer"] $ws5
 assign [class="^rdesktop$"] $ws5
+assign [class="^Vncviewer$"] $ws5
 assign [class="VirtualBox"] $ws6
 # assign [class="Inkscape"] $ws6
 assign [class="jetbrains-idea"] $ws7
@@ -149,6 +150,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 for_window [class="zoom"] floating enable
 for_window [class=".*anbox.*"] floating enable
 for_window [class="^rdesktop$"] floating enable
+for_window [class="^Vncviewer$"] floating enable
 for_window [class="electronic-wechat"] floating enable
 for_window [class="(?!)System-config-printer.py"] floating enable, border normal
 for_window [class="Calamares"] floating enable, border normal
@@ -266,7 +268,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Show the sup-mail scratchpad window, if any.
-bindsym $sup+c [class="Chromium"] scratchpad show
+bindsym $sup+c [class="Google-chrome"] scratchpad show
 bindsym $sup+m [title="netease-cloud-music"] scratchpad show
 bindsym $sup+w [class="electronic-wechat"] scratchpad show
 bindsym $sup+e [title="Mozilla Thunderbird"] scratchpad show
